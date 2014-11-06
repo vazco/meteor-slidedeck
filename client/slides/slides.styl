@@ -1,0 +1,108 @@
+// main slide container classes
+// this is Stylus but you can use css here too if you want
+// more info in client/layout/style.styl file
+// there is custom .styl file for particular slides too
+
+// jeet grid system import http://jeet.gs/
+// rupture import https://github.com/jenius/rupture
+@import 'jeet'
+@import 'rupture'
+
+// color variables
+
+color-main-background = #fff
+font-main = 'Roboto', sans-serif
+background-image = '/images/bg.jpg'
+
+rem-calc(value)
+    return unit(value/16, 'rem')
+
+
+
+body
+    background-color color-main-background
+    background-image url(background-image)
+    font-family font-main
+
+// main structure
+.vslide
+    width 100%
+    height 100%
+    .vslide-content
+        height auto
+        position absolute;
+        left 50%
+        top 50%
+        bottom auto
+        right auto
+        transform translateX(-50%) translateY(-50%)
+        width 100%
+        text-align center
+        padding rem-calc(30) rem-calc(60)
+        +below(541px)
+            padding rem-calc(30) rem-calc(15)
+        .text-center
+            text-align center
+        .text-left
+            text-align left
+        .text-right
+            text-align right
+        a
+            color #27559d
+        h1
+            font-size rem-calc(62)
+            font-weight 900
+            line-height 1.1
+            +below(541px)
+                font-size rem-calc(32)
+        h2
+            font-size rem-calc(36)
+            +below(541px)
+                font-size rem-calc(26)
+        h3
+            font-size rem-calc(32)
+            +below(541px)
+                font-size rem-calc(22)
+        h4
+            font-size rem-calc(26)
+            +below(541px)
+                font-size rem-calc(16)
+        img
+            width auto
+            height auto
+            max-height 100%
+            max-width 100%
+        ul
+            &.big
+                font-size rem-calc(26)
+                +below(541px)
+                    font-size rem-calc(16)
+        .vslide-col-1 // 1 column with offset, centered, text align left
+            width 90%
+            cf()
+            col(10/12, 1/12) // width , offset
+            text-align left
+            +above(1025px)
+                col(1/2, 1/4)
+                text-align left
+        .vslide-col-2 // 2 column container
+            cf()
+            center(1200px)
+            .col
+                col(1/2)
+                &.text-left
+                    text-align left
+                +below(768px)
+                    stack()
+        .vslide-col-3 // 3 column container
+            cf()
+            center(1200px)
+            .col
+                col(1/3)
+                &.text-left
+                    text-align left
+                +below(768px)
+                    stack()
+
+
+// particular slides styles here

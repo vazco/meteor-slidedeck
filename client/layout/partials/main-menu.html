@@ -1,0 +1,40 @@
+<template name="mainMenu">
+    <div class="link-list">
+        <div class="menu-item">
+            <i class="fa fa-home"></i> <a href="{{pathFor 'index.view'}}">index</a>
+        </div>
+        <div class="menu-item">
+            <i class="fa fa-desktop"></i> <a href="{{pathFor 'slideshow.view'}}">Live Slideshow</a>
+        </div>
+        {{#if isPrivViewEnabled}}
+            <div class="menu-item">
+                <i class="fa fa-eye"></i> <a href="{{pathFor 'priv.slideshow.view'}}">Priv. Slideshow</a>
+            </div>
+            <hr>
+            {{#if currentUser}}
+                <div class="menu-item">
+                    <i class="fa fa-toggle-on"></i> <a href="#" class="js-disable-priv-slideshow">Priv. Slideshow OFF</a>
+                </div>
+            {{/if}}
+        {{else}}
+            <hr>
+            {{#if currentUser}}
+                <div class="menu-item">
+                    <i class="fa fa-toggle-off"></i> <a href="#" class="js-enable-priv-slideshow">Priv. Slideshow ON</a>
+                </div>
+            {{/if}}
+        {{/if}}
+        {{#if currentUser}}
+            <div class="menu-item">
+                <i class="fa fa-user"></i> <a href="#" class="js-logout">Logout</a>
+            </div>
+        {{else}}
+            <div class="menu-item">
+                <i class="fa fa-user"></i> <a href="{{pathFor 'login.view'}}">Login</a>
+            </div>
+        {{/if}}
+        <a href="#" class="close-menu-button">
+            <i class="fa fa-times"></i>
+        </a>
+    </div>
+</template>

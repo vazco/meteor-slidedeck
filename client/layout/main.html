@@ -1,0 +1,22 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>MeteorDay Wrocław!</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+</head>
+
+<template name="mainLayout">
+    <div class="menu-wrap">
+        <nav class="menu">
+            {{> mainMenu}}
+        </nav>
+    </div>
+    <div class="menu-wrap-overlay"></div>
+    <a href="#" class="full-screen-button" id="full-screen-button">
+        <i class="fa fa-fw fa-expand"></i>
+    </a>
+    <a href="#" class="menu-button" id="open-button">
+        <i class="fa fa-fw fa-bars"></i>
+    </a>
+    {{> yield}}
+</template>
