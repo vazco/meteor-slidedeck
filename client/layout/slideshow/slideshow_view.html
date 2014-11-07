@@ -1,32 +1,33 @@
 <template name="slideshowView">
-    {{#if currentUser}}
-        <nav class="slideshow-navigation">
-            <a href="#" class="prev">
-                <i class="fa fa-chevron-left"></i>
-            </a>
-            <a href="#" class="next">
-                <i class="fa fa-chevron-right"></i>
-            </a>
-        </nav>
+    {{#if isSlideshowOn}}
+        {{> slideshowViewOn}}
+    {{else}}
+        {{> slideshowViewOff}}
     {{/if}}
+</template>
+
+<template name="slideshowViewOn">
+    <nav class="slideshow-navigation">
+        <a href="#" class="prev">
+            <i class="fa fa-chevron-left"></i>
+        </a>
+        <a href="#" class="next">
+            <i class="fa fa-chevron-right"></i>
+        </a>
+    </nav>
     {{#momentum plugin='vazco-right-to-left'}}
         {{> Template.dynamic template=template}}
     {{/momentum}}
 </template>
 
-<template name="stayTuned">
+<template name="slideshowViewOff">
     <div class="vslide">
         <div class="vslide-content"> <!-- important if you want horizontal and vertical aligning -->
-            {{#if currentUser}}
-                <h1>
-                    We are ready to start!
-                </h1>
-            {{else}}
-                <h1>
-                    Stay Tuned!
-                </h1>
-                <h2><small>Or login to start live presentation.</small></h2>
-            {{/if}}
+            <h1>Presentation preview is disabled</h1>
+            <h2>Come back later</h2>
+            <h4>
+                <a href="{{pathFor 'index.view'}}">Home page</a>
+            </h4>
         </div>
     </div>
 </template>

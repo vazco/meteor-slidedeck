@@ -1,3 +1,10 @@
 <template name="notFoundPage">
-    <div>Sorry, page not found..</div>
+    <div class="vslide">
+        <div class="vslide-content"> <!-- important if you want horizontal and vertical aligning -->
+            <h1>Sorry, page not found..</h1>
+            <h4>
+                <a href="{{pathFor 'index.view'}}">Home page</a>
+            </h4>
+        </div>
+    </div>
 </template>

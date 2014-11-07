@@ -5,7 +5,6 @@ Meteor.startup(function () {
             email: Meteor.settings.admin.email,
             password: Meteor.settings.admin.password
         });
-
     }
     if (!App.SlidesSettings.find().count()) {
         App.SlidesSettings.insert({isPrivViewEnabled: false});

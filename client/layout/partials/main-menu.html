@@ -4,23 +4,23 @@
             <i class="fa fa-home"></i> <a href="{{pathFor 'index.view'}}">index</a>
         </div>
         <div class="menu-item">
-            <i class="fa fa-desktop"></i> <a href="{{pathFor 'slideshow.view'}}">Live Slideshow</a>
+            <i class="fa fa-desktop"></i> <a href="{{pathFor 'live.view'}}">Live</a>
         </div>
         {{#if isPrivViewEnabled}}
             <div class="menu-item">
-                <i class="fa fa-eye"></i> <a href="{{pathFor 'priv.slideshow.view'}}">Priv. Slideshow</a>
+                <i class="fa fa-eye"></i> <a href="{{pathFor 'slideshow.view'}}">Slideshow</a>
             </div>
             <hr>
             {{#if currentUser}}
                 <div class="menu-item">
-                    <i class="fa fa-toggle-on"></i> <a href="#" class="js-disable-priv-slideshow">Priv. Slideshow OFF</a>
+                    <i class="fa fa-toggle-on"></i> <a href="#" class="js-disable-priv-slideshow">Turn off Slideshow</a>
                 </div>
             {{/if}}
         {{else}}
             <hr>
             {{#if currentUser}}
                 <div class="menu-item">
-                    <i class="fa fa-toggle-off"></i> <a href="#" class="js-enable-priv-slideshow">Priv. Slideshow ON</a>
+                    <i class="fa fa-toggle-off"></i> <a href="#" class="js-enable-priv-slideshow">Turn on Slideshow</a>
                 </div>
             {{/if}}
         {{/if}}
