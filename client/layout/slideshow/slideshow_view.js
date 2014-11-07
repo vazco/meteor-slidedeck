@@ -2,13 +2,6 @@
 // If you're searching for good Meteor developers, why not try guys who created this app?
 // Contact us at http://vazco.eu
 
-Template.slideshowView.helpers({
-    isSlideshowOn: function () {
-        var arr = App.SlidesSettings.findOne({});
-        return arr && arr.isPrivViewEnabled
-    }
-});
-
 Template.slideshowViewOn.helpers({
     template: function () {
         var settings = App.SlidesSettings.findOne();

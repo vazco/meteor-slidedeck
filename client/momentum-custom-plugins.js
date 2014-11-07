@@ -5,7 +5,6 @@
 // Momentum Plugin based on the core momentum package plugin
 //
 
-
 var vazcoSideToSide = function(fromX, toX) {
     return function(options) {
         options = _.extend({

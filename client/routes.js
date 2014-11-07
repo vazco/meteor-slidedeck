@@ -33,6 +33,9 @@ Router.map(function() {
         onBeforeAction: function () {
             Session.set('siteTitle', 'Vazco SlideDeck!');
             this.next();
+        },
+        waitOn: function () {
+            return Meteor.subscribe('settings');
         }
     });
     this.route('live.view', {
@@ -40,6 +43,24 @@ Router.map(function() {
         onBeforeAction: function () {
             Session.set('siteTitle', 'Vazco SlideDeck! - Live!');
             this.next();
+        },
+        waitOn: function () {
+            return [
+                Meteor.subscribe('settings'),
+                Meteor.subscribe('slides')
+            ];
+        },
+        data: function () {
+            var obj = App.Slides.findOne({active: true});
+            if (obj && obj.template) {
+                return {
+                    template: obj.template
+                }
+            } else {
+                return {
+                    template: 'stayTuned'
+                }
+            }
         }
     });
     this.route('slideshow.view', {
@@ -47,6 +68,17 @@ Router.map(function() {
         onBeforeAction: function () {
             Session.set('siteTitle', 'Vazco SlideDeck! - Slideshow!');
             this.next();
+        },
+        waitOn: function () {
+            return Meteor.subscribe('settings');
+        },
+        data: function () {
+            var arr = App.SlidesSettings.findOne({});
+            if(arr && arr.isPrivViewEnabled) {
+                return {
+                    isSlideshowOn: arr.isPrivViewEnabled
+                }
+            }
         }
     });
     this.route('login.view', {
@@ -54,6 +86,9 @@ Router.map(function() {
         onBeforeAction: function () {
             Session.set('siteTitle', 'Vazco SlideDeck! - Admin Login!');
             this.next();
+        },
+        waitOn: function () {
+            return Meteor.subscribe('settings');
         }
     });
 });

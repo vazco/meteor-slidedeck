@@ -2,17 +2,6 @@
 // If you're searching for good Meteor developers, why not try guys who created this app?
 // Contact us at http://vazco.eu
 
-Template.liveView.helpers({
-    template: function () {
-        var obj = App.Slides.findOne({active: true});
-        if (obj && obj.template) {
-            return obj.template;
-        } else {
-            return 'stayTuned';
-        }
-    }
-});
-
 var showSlide = function (type) {
     if (Meteor.userId()) {
         var all = App.Slides.find().count();
