@@ -1,4 +1,14 @@
-## Vazco SlideDeck
+<h1 align="center">
+    <a href="https://github.com/vazco">vazco</a>/Vazco Slidedeck
+</h1>
+
+&nbsp;
+
+<h3 align="center">
+  -- Abandonware. This package is deprecated! --
+</h3>
+
+&nbsp;
 
 ### Demo
 
@@ -104,3 +114,9 @@ Example settings.json:
 ```
 
 This file should be in .gitignore file. Only with this you will be able to login and run live presentation.
+
+### License
+
+<img src="https://vazco.eu/banner.png" align="right">
+
+**Like every package maintained by [Vazco](https://vazco.eu/), Vazco Slidedeck is [MIT licensed](https://github.com/vazco/uniforms/blob/master/LICENSE).**
